@@ -1,60 +1,61 @@
 .row {
-    display: flex;
-    align-items: center;
-    padding: 10px 0;
-    position: relative;
-  }
-  
-  .serviceInfo {
-    display: flex;
-    justify-content: space-between;
-    width: 200px;
-    margin-right: 10px;
-  }
-  
-  .uptimePercentage {
-    color: #4A5568;
-  }
-  
-  .uptimeBar {
-    flex-grow: 1;
-    height: 10px;
-    background-color: #2D3748;
-    border-radius: 5px;
-    overflow: hidden;
-    cursor: pointer;
-  }
-  
-  .uptimeProgress {
-    height: 100%;
-    background-color: #48BB78;
-  }
-  
-  .uptimeProgress.down {
-    background-color: #F56565;
-  }
-  
-  .statusIndicator {
-    margin-left: 10px;
-    padding: 2px 6px;
-    border-radius: 9999px;
-    font-size: 12px;
-    background-color: #48BB78;
-    color: #22543D;
-  }
-  
-  .statusIndicator.down {
-    background-color: #F56565;
-    color: #742A2A;
-  }
-  
-  .tooltip {
-    position: fixed;
-    background-color: #1A202C;
-    color: white;
-    padding: 10px;
-    border-radius: 4px;
-    font-size: 14px;
-    z-index: 1000;
-    transform: translate(-50%, -100%);
-  }
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  position: relative;
+}
+
+.serviceInfo {
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
+  margin-right: 10px;
+}
+
+.uptimePercentage {
+  color: #A0AEC0;
+}
+
+.uptimeBar {
+  flex-grow: 1;
+  height: 8px;
+  background-color: #2D3748;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+}
+
+.uptimeDay {
+  height: 100%;
+  background-color: #48BB78;
+  border-right: 1px solid #2D3748;
+}
+
+.uptimeDay.down {
+  background-color: #F56565;
+}
+
+.statusIndicator {
+  margin-left: 10px;
+  padding: 2px 6px;
+  border-radius: 9999px;
+  font-size: 12px;
+  background-color: #48BB78;
+  color: #22543D;
+}
+
+.statusIndicator.down {
+  background-color: #F56565;
+  color: #742A2A;
+}
+
+.tooltip {
+  position: fixed;
+  background-color: #4A5568;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  z-index: 1000;
+  transform: translate(-50%, -100%);
+}
