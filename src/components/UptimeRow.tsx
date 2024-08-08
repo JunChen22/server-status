@@ -42,8 +42,8 @@ const UptimeRow: React.FC<Service> = ({ name, dailyUptime, status }) => {
   return (
     <div className={styles.row}>
       <div className={styles.serviceInfo}>
-        <span>{name}</span>
-        <span className={styles.uptimePercentage}>{averageUptime.toFixed(3)}%</span>
+      <a href="/123">{name}</a>
+      <span className={styles.uptimePercentage}>{averageUptime.toFixed(3)}%</span>
       </div>
       <div className={styles.uptimeBar}>
         {dailyUptime.map((day, index) => (

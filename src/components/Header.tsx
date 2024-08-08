@@ -1,17 +1,21 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
 
 const Header: React.FC = () => {
-  const [countdown, setCountdown] = useState(5);
-  const [lastUpdated, setLastUpdated] = useState(new Date().toLocaleString());
+  const [countdown, setCountdown] = useState(60);
+  const [lastUpdated, setLastUpdated] = useState('');
 
   useEffect(() => {
+    setLastUpdated(new Date().toLocaleString());
+
     const interval = setInterval(() => {
       setCountdown(prevCountdown => {
         if (prevCountdown > 0) {
           return prevCountdown - 1;
         } else {
           setLastUpdated(new Date().toLocaleString());
-          return 5;
+          return 60;
         }
       });
     }, 1000);
@@ -20,11 +24,17 @@ const Header: React.FC = () => {
   }, []);
 
   return (
-    <header className="bg-gray-800 text-white p-4">
-      <h1 className="text-2xl font-bold">Service Status</h1>
-      <p className="text-sm">Last updated: {lastUpdated}</p>
-      <p className="text-sm">Next update in {countdown} sec</p>
-    </header>
+<header className="text-white p-4 flex justify-between items-center">
+    <img src="/Alamy cat.png" alt="Icon" className="w-12 h-12" />
+    <div className="flex flex-col items-end space-y-2">
+        <h1 className="text-2xl font-bold">Service Status</h1>
+        <div className="flex items-center space-x-2">
+            <p className="text-sm">Last updated: {lastUpdated}</p>
+            <span className="text-sm">|</span>
+            <p className="text-sm">Next update in {countdown} sec</p>
+        </div>
+    </div>
+</header>
   );
 };
 

@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.divider {
+    color: #ccc; /* Change the color as needed */
+    font-size: 1.5rem; /* Adjust the size as needed */
+    margin: 0 0.5rem; /* Adjust the horizontal margin as needed */
+}
+
+
+

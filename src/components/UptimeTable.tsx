@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from 'react';
-import styles from '../styles/UptimeTable.module.css';
 import UptimeRow from './UptimeRow';
 
 interface DailyUptime {
@@ -45,13 +44,17 @@ const UptimeTable: React.FC = () => {
   ];
 
   return (
-    <div className={styles.container}>
-      <h2 className={styles.title}>Uptime Last 90 days</h2>
-      <div className={styles.tableContainer}>
+    <div>
+      <h2 className="text-xl font-semibold mb-2 text-white p-1 my-4">
+        Uptime <span className="text-sm text-gray-500">Last 90 days</span>
+      </h2>
+      <div className="bg-gray-800 rounded-lg p-5 text-white font-sans">
+      <div className="flex flex-col">
         {services.map((service) => (
           <UptimeRow key={service.name} {...service} />
         ))}
       </div>
+    </div>
     </div>
   );
 };
