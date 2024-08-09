@@ -22,7 +22,7 @@ const ServerStatus: React.FC<ServerStatusProps> = ({
         </div>
         <div className="flex items-center">
           <span className="text-xs text-gray-400 mr-2">Up</span>
-          <span className="font-bold text-green-400 animate-pulse">{serversUp}</span>
+          <span className="font-bold text-green-400">{serversUp}</span>
         </div>
         <div className="flex items-center">
           <span className="text-xs text-gray-400 mr-2">Down</span>

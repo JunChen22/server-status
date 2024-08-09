@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from '../styles/UptimeRow.module.css';
+import { ArrowRight } from 'lucide-react';
 
 interface TooltipState {
   show: boolean;
@@ -10,6 +10,7 @@ interface TooltipState {
 }
 
 interface Service {
+  id: string;
   name: string;
   dailyUptime: DailyUptime[];
   status: 'up' | 'down';
@@ -20,9 +21,9 @@ interface DailyUptime {
   uptime: number;
 }
 
-const UptimeRow: React.FC<Service> = ({ name, dailyUptime, status }) => {
+const UptimeRow: React.FC<Service> = ({ id, name, dailyUptime, status }) => {
   const [tooltip, setTooltip] = useState<TooltipState>({ show: false, x: 0, y: 0, date: '', uptime: 0 });
-  
+
   const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>, date: string, uptime: number) => {
     setTooltip({
       show: true,
@@ -40,28 +41,39 @@ const UptimeRow: React.FC<Service> = ({ name, dailyUptime, status }) => {
   const averageUptime = dailyUptime.reduce((sum, day) => sum + day.uptime, 0) / dailyUptime.length;
 
   return (
-    <div className={styles.row}>
-      <div className={styles.serviceInfo}>
-      <a href="/123">{name}</a>
-      <span className={styles.uptimePercentage}>{averageUptime.toFixed(3)}%</span>
+    <div className="flex items-center py-2.5 relative border-b border-black/10 pb-4 mb-4">
+
+      <div className='w-52 mr-2.5 ml-8 flex items-center'>
+        <a href={`/${id}`} className='flex items-center'>
+          {name}
+          <ArrowRight size={16} className='ml-1' />
+        </a>
       </div>
-      <div className={styles.uptimeBar}>
+
+      <span className='text-green-400 ml-1 mr-5'>{averageUptime.toFixed(3)}%</span>
+
+
+      <div className='flex space-x-1'>
         {dailyUptime.map((day, index) => (
+
           <div
             key={index}
-            className={`${styles.uptimeDay} ${day.uptime < 100 ? styles.down : ''}`}
-            style={{ width: `${100 / dailyUptime.length}%` }}
+            className={`w-0.5 h-8 rounded-full bg-green-500`}
+
             onMouseEnter={(e) => handleMouseEnter(e, day.date, day.uptime)}
             onMouseLeave={handleMouseLeave}
           />
         ))}
       </div>
-      <span className={`${styles.statusIndicator} ${status === 'down' ? styles.down : ''}`}>
+
+      <span className={`inline-block w-10 text-right ml-2 pl-1 pr-0.5 py-0.5 ${status === 'down' ? 'text-red-500' : 'text-white'}`}>
         {status === 'up' ? 'Up' : 'Down'}
       </span>
+
+
       {tooltip.show && (
-        <div 
-          className={styles.tooltip} 
+        <div
+          className="fixed bg-gray-600 text-white p-2.5 rounded font-size-14 z-1000 transform -translate-x-1/2 -translate-y-full"
           style={{ left: tooltip.x, top: tooltip.y }}
         >
           <p>{tooltip.date}</p>

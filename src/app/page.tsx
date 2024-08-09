@@ -30,20 +30,17 @@ const fakeUpdates = [
   { date: '2024-07-28', message: 'Database optimization completed, resulting in 20% faster queries.' },
 ];
 
-
 export default function Home() {
   return (
-    <div style={{ backgroundColor: '#0F172A', minHeight: '100vh', padding: '20px' }}>
+    <div className="bg-gray-900 min-h-screen p-5">
       <Header />
-      <StatusOverview servicesDown={2} />
+      <StatusOverview servicesDown={0} />
       <UptimeTable />
       <OverallUptime data={fakeData} />
-      <div className="container mx-auto p-4">
       <StatusUpdates daysToShow={30} updates={fakeUpdates} />
       {/* Or to show no updates: */}
       {/* <StatusUpdates daysToShow={30} /> */}
       <Footer />
     </div>
-  </div>
   );
 }

@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { Bell, BellOff, Maximize } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -22,35 +23,38 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-gray-800 text-white p-4 flex justify-between items-center">
-      <div>
-        <button 
+    <footer className=" text-gray-500 p-4 flex justify-between items-center my-4">
+      <div className="flex items-center">
+        <button
           onClick={toggleFullscreen}
-          className="mr-4 hover:text-gray-300"
+          className="mr-4 hover:text-gray-300 flex items-center"
         >
+          <Maximize className="mr-2" />
           {isFullscreen ? 'Exit fullscreen' : 'Fullscreen mode'}
         </button>
-        <button 
+
+        <button
           onClick={toggleSound}
           className="hover:text-gray-300"
         >
           {isSoundOn ? (
-            <>
-              <span className="mr-2">🔔</span>
+            <div className="flex items-center">
+              <span className="mr-2"><Bell /></span>
               Alert sound on
-            </>
+            </div>
           ) : (
-            <>
-              <span className="mr-2">🔕</span>
+            <div className="flex items-center">
+              <span className="mr-2"><BellOff /></span>
               Alert sound off
-            </>
+            </div>
           )}
         </button>
       </div>
-      <div>
-        <Link href="/privacy-policy" className="mr-4 hover:underline">
+      <div className="flex items-center space-x-1">
+        <Link href="/privacy-policy" className="hover:underline">
           Privacy policy
         </Link>
+        <span className="text-sm">|</span>
         <Link href="/terms-of-service" className="hover:underline">
           Terms of Service
         </Link>

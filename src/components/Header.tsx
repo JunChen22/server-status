@@ -1,5 +1,4 @@
 'use client';
-
 import React, { useState, useEffect } from 'react';
 
 const Header: React.FC = () => {
@@ -24,17 +23,17 @@ const Header: React.FC = () => {
   }, []);
 
   return (
-<header className="text-white p-4 flex justify-between items-center">
-    <img src="/Alamy cat.png" alt="Icon" className="w-12 h-12" />
-    <div className="flex flex-col items-end space-y-2">
+    <header className="text-white p-5 flex justify-between items-center">
+      <img src="/Alamy cat.png" alt="Icon" className="w-16 h-16" />
+      <div className="flex flex-col items-end space-y-2">
         <h1 className="text-2xl font-bold">Service Status</h1>
         <div className="flex items-center space-x-2">
-            <p className="text-sm">Last updated: {lastUpdated}</p>
-            <span className="text-sm">|</span>
-            <p className="text-sm">Next update in {countdown} sec</p>
+          <p className="text-sm">Last updated: {lastUpdated}</p>
+          <span className="text-sm">|</span>
+          <p className="text-sm">Next update in {countdown} sec</p>
         </div>
-    </div>
-</header>
+      </div>
+    </header>
   );
 };
 
