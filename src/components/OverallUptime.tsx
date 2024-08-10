@@ -7,7 +7,7 @@ interface UptimeData {
 
 const OverallUptime: React.FC<{ data: UptimeData }> = ({ data }) => (
     <div>
-        <h2 className="text-2xl font-semibold mb-2 text-white p-1 my-4">Overall Uptime</h2>
+        <h2 className="text-3xl font-semibold mb-2 text-white p-1 my-4">Overall Uptime</h2>
         <div className="bg-gray-800 text-white p-4 my-4">
             <div className="grid md:grid-cols-4 gap-2 ml-8">
                 <div className="flex items-center">

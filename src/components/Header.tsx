@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 
-const Header: React.FC = () => {
+const Header2: React.FC = () => {
   const [countdown, setCountdown] = useState(60);
   const [lastUpdated, setLastUpdated] = useState('');
 
@@ -24,8 +24,8 @@ const Header: React.FC = () => {
 
   return (
     <header className="text-white p-5 flex justify-between items-center">
-      <img src="/Alamy cat.png" alt="Icon" className="w-16 h-16" />
-      <div className="flex flex-col items-end space-y-2">
+      <img src="/Alamy cat.png" alt="Icon" className="w-16 h-16 ml-5 mt-10" />
+      <div className="flex flex-col items-end space-y-2 mr-5">
         <h1 className="text-2xl font-bold">Service Status</h1>
         <div className="flex items-center space-x-2">
           <p className="text-sm">Last updated: {lastUpdated}</p>
@@ -37,4 +37,4 @@ const Header: React.FC = () => {
   );
 };
 
-export default Header;
+export default Header2;

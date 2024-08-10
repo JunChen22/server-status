@@ -16,7 +16,6 @@ interface Service {
   status: 'up' | 'down';
 }
 
-
 const UptimeTable: React.FC = () => {
   const services: Service[] = [
     {
@@ -106,8 +105,8 @@ const UptimeTable: React.FC = () => {
   return (
     <div>
       <div className="flex justify-between items-center mb-2 p-1 my-4">
-        <h2 className="text-2xl font-semibold text-white">
-          Uptime <span className="text-sm text-gray-400">Last 90 days</span>
+        <h2 className="text-3xl font-semibold text-white">
+          Uptime <span className="text-xl text-gray-400">Last 90 days</span>
         </h2>
         <div className="flex items-center">
           <Calendar className="mr-2 text-green-500" />

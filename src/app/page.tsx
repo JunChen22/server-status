@@ -33,7 +33,6 @@ const fakeUpdates = [
 export default function Home() {
   return (
     <div className="bg-gray-900 min-h-screen p-5">
-      <Header />
       <StatusOverview servicesDown={0} />
       <UptimeTable />
       <OverallUptime data={fakeData} />

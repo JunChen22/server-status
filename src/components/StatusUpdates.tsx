@@ -20,7 +20,7 @@ const StatusUpdates: React.FC<StatusUpdatesProps> = ({ daysToShow, updates = [] 
 
   const handleShowMore = () => {
     if (showAll) {
-      router.push('/status-history');
+      router.push('/history');
     } else {
       setShowAll(true);
     }
@@ -54,7 +54,7 @@ const StatusUpdates: React.FC<StatusUpdatesProps> = ({ daysToShow, updates = [] 
           ) : (
             <p className="text-gray-400">
               There are no updates in the last {daysToShow} days.{' '}
-              <Link href="/status-history" className="text-green-400 hover:underline">
+              <Link href="/history" className="text-green-400 hover:underline">
                 Status update history
               </Link>
             </p>

@@ -1,5 +1,6 @@
 import './globals.css'
 import ServerStatus from '@/components/ServerStatus'
+import Header from '@/components/Header'
 
 export const metadata = {
   title: 'Service Status',
@@ -16,6 +17,7 @@ export default function RootLayout({
       <body className="bg-gray-900">
         <div className="flex flex-col min-h-screen"> {/* Ensure the container has the same background color */}
           <main className="flex-grow container mx-auto px-5 sm:px-6 lg:px-20 max-w-screen-xl">
+            <Header />
             {children}
           </main>
           <ServerStatus
