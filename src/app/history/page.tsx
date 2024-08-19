@@ -62,7 +62,7 @@ const mockStatusUpdates: StatusUpdate[] = [
 const Page: React.FC<PageProps> = ({ id }) => {
     return (
         <div className='text-white'>
-            <StatusUpdateHistory updates={mockStatusUpdates} onBack={() => {}} />
+            <StatusUpdateHistory updates={mockStatusUpdates}  />
         </div>
     );
 };
